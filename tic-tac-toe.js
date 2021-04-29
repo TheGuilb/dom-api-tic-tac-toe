@@ -11,7 +11,11 @@ window.addEventListener("DOMContentLoaded", event => {
         newGameButton.classList.remove("hide");
         newGameButton.classList.add("show");
     }
-
+// make new game button functional in clearing board
+// then make button unusable if game is still in play
+// fix tie if win on last move
+// if there is a win disable clicks on board
+//
     const arr = Array(9).fill("");
     let gameStatus = () => {
         console.log(arr)
