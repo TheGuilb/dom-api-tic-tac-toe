@@ -3,9 +3,15 @@ window.addEventListener("DOMContentLoaded", event => {
     const square = document.querySelectorAll(".square");
     let header = document.getElementById("game-status")
     header.innerText = "";
-    // if (header !== "") {
-    //     event.preventDefault();
-    // }
+    let newGameButton = document.getElementById("new-game");
+    newGameButton.setAttribute("class", "hide");
+    let giveUpButton = document.getElementById("give-up");
+
+    if (header !== "") {
+        newGameButton.classList.remove("hide");
+        newGameButton.classList.add("show");
+    }
+
     const arr = Array(9).fill("");
     let gameStatus = () => {
         console.log(arr)
@@ -41,9 +47,12 @@ window.addEventListener("DOMContentLoaded", event => {
             var winner = arr[2]
             header.innerText = `${winner} is the winner!`
         }
-        // if (!arr.includes("")) {
-        //     header.innerText = "It's a TIE -fighter"
-        // }
+        if (!arr.includes("")) {
+            header.innerText = "It's a TIE -fighter"
+        } else {
+        // newGameButton.classList.remove("show");
+            newGameButton.classList.add("hide");
+    }
     }
 
 // console.log(arr)
